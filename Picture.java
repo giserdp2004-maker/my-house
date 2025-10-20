@@ -16,13 +16,19 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private Circle moon;
+    private Square grass;
     
     /**
      * Constructor for objects of class Picture
      */
     public Picture()
     {
-        // nothing to do... instance variables are automatically set to null
+       wall = new Square();
+       window = new Square();
+       roof = new Triangle();
+       sun = new Circle();
+       moon = new Circle();
+       grass = new Square();// nothing to do... instance variables are automatically set to null
     }
 
     /**
@@ -48,19 +54,33 @@ public class Picture
         roof.moveHorizontal(20);
         roof.moveVertical(-60);
         roof.makeVisible();
-
+      
+        grass = new Square();
+        grass.changeColor("green");
+        grass.moveVertical(140);
+        grass.moveHorizontal(-310);
+        grass.changeSize(500);
+        grass.makeVisible();
+        
         sun = new Circle();
         sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
-        sun.changeSize(80);
+        sun.moveHorizontal(180);
+        sun.moveVertical(-80);
+        sun.changeSize(60);
         sun.makeVisible();
+        sun.slowMoveVertical(300);
+        
         moon = new Circle();
-        moon.makeVisible();
         moon.changeColor("magenta");
         moon.changeSize(50);
-        moon.moveHorizontal(-170);
-    }
+        moon.moveUp();
+        moon.moveUp();
+        moon.moveHorizontal(-40);
+        moon.moveVertical(-20);
+        moon.makeVisible();
+                
+    }   
+        
 
     /**
      * Change this picture to black/white display
