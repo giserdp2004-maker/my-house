@@ -109,4 +109,13 @@ public class Picture
             sun.changeColor("yellow");
         }
     }
+    
+    /**
+     * Change this picture to use color display
+     */
+    public void amanecer()
+    {
+        moon.makeInvisible();   
+        sun.slowMoveVertical(-300);
+    }
 }
