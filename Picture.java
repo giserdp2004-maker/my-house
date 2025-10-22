@@ -17,7 +17,8 @@ public class Picture
     private Circle sun;
     private Circle moon;
     private Square grass;
-    
+    private Person person;
+    private Person person2;
     /**
      * Constructor for objects of class Picture
      */
@@ -28,7 +29,9 @@ public class Picture
        roof = new Triangle();
        sun = new Circle();
        moon = new Circle();
-       grass = new Square();// nothing to do... instance variables are automatically set to null
+       grass = new Square();
+       person = new Person();
+       person2 = new Person();// nothing to do... instance variables are automatically set to null
     }
 
     /**
@@ -117,5 +120,15 @@ public class Picture
     {
         moon.makeInvisible();   
         sun.slowMoveVertical(-300);
+        person.moveHorizontal(-250);
+        person.moveDown();
+        person.moveDown();
+        person.makeVisible();
+        person.slowMoveHorizontal(130);
+        person2.moveHorizontal(250);
+        person2.moveDown();
+        person2.moveDown();
+        person2.makeVisible();
+        person2.slowMoveHorizontal(-220);
     }
 }
